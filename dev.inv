@@ -2,4 +2,4 @@
 34.221.146.71 ansible_user=ec2-user 
 34.221.241.199 ansible_user=ec2-user
 
-# ansible_ssh_Private_key_file : ~/ .ssh/jenkins-pipeline.pem
+
