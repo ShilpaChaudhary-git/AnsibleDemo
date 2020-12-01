@@ -1,0 +1,24 @@
+---
+- hosts: tag_Name_HelloWorld
+  become: True
+   tasks:
+    -   name: "Uninstall HTTPD/Apache"
+      	tags: uninstall_apache
+      	yum:
+          name: httpd
+          autoremove: yes
+          state: absent
+
+    -   name: Install packages
+      	yum:
+          name: "ngnix"
+          state: "present"
+    -   name: Start Nginx server
+        service:
+          name: ngnix
+          state: started
+          enabled: True
+    -   name: Deploy static website
+        copy:
+          src: index123.html
+          dest: /var/www/html/
