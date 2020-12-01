@@ -1,16 +1,16 @@
 
 ---
-- name: Install nginx
+
   hosts: tag_Name_HelloWorld
   become: true
 
   tasks:
-   - name: Stop HTTPD/Apache
+   -name: Stop HTTPD/Apache
     service:
       name: httpd
       state: stopped 
 
-   - name: Uninstall HTTPD/Apache
+   -name: Uninstall HTTPD/Apache
     yum:
       name: httpd
       autoremove: yes
